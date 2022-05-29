@@ -36,7 +36,6 @@ def word_split(content, txt):
     # 通过词性筛选掉一些无用词
     anword = [x.word for x in pseg.cut(content) if
               (x.flag.startswith('a') or x.flag.startswith('n')) and x.word not in txt]
-    print(anword)
     return anword
 
 
@@ -63,7 +62,6 @@ def word_clean(wl, txt):
     for i in wl:
         if i.isdigit() or i in txt or i in zhon.hanzi.punctuation or i in string.punctuation:
             wl.remove(i)
-    print(wl)
     return ' '.join(wl)
 
 
